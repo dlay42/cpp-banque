@@ -9,7 +9,7 @@ double SimulationEvenementDiscret::heureActuel() {
     return heure_actuel;
 }
 
-void SimulationEvenementDiscret::ajouter(Evenement evt) {
+void SimulationEvenementDiscret::ajouter(Evenement* evt) {
 
 }
 

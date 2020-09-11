@@ -10,7 +10,7 @@ class SimulationEvenementDiscret {
     public:
         SimulationEvenementDiscret(double heure_actuel);
         double heureActuel();
-        void ajouter(Evenement evt);
+        void ajouter(Evenement* evt);
         void lancer();
 };
 
