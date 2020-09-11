@@ -12,13 +12,13 @@ class FileAttente {
         int longueur_moyenne;
         double attente_moyenne;
         Banque* banque;
-        deque< Client > file_clients;
+        deque< Client* > file_clients;
 
     public:
         FileAttente(Banque* banque);
-        void ajouter(Client client);
+        void ajouter(Client* client);
         bool estVide();
-        Client retirer();
+        Client* retirer();
 };
 
 #endif

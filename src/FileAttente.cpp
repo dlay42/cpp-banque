@@ -7,7 +7,7 @@ FileAttente::FileAttente(Banque* banque) {
     this->banque = banque;
 }
 
-void FileAttente::ajouter(Client client) {
+void FileAttente::ajouter(Client* client) {
     this->file_clients.push_back(client);
 }
 
@@ -15,8 +15,8 @@ bool FileAttente::estVide() {
     return file_clients.empty();
 }
 
-Client FileAttente::retirer() {
-    Client premier_file = this->file_clients.front();
+Client* FileAttente::retirer() {
+    Client* premier_file = this->file_clients.front();
     this->file_clients.pop_front();
     return premier_file;
     
