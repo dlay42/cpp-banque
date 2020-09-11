@@ -6,7 +6,7 @@ SimulationEvenementDiscret::SimulationEvenementDiscret(double heure_actuel) {
 
 // TODO
 double SimulationEvenementDiscret::heureActuel() {
-
+    return heure_actuel;
 }
 
 void SimulationEvenementDiscret::ajouter(Evenement evt) {
