@@ -4,7 +4,7 @@ Simulation::Simulation(double duree_prevue, double duree_reelle, double temps_mo
     this->duree_prevue = duree_prevue;
     this->duree_reelle = duree_reelle;
     this->temps_moyen_arrivee = temps_moyen_arrivee;
-    this->banque = new Banque(nb_caissiers, temps_moyen_service);
+    this->banque = new Banque(nb_caissiers, temps_moyen_service, this);
 }
 
 double Simulation::dureePrevue() {

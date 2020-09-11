@@ -5,6 +5,7 @@
 #include "../include/FileAttente.h"
 #include "../include/Poisson.h"
 
+class Simulation;
 class Banque {
     protected:
         int nb_caissiers;
@@ -12,9 +13,10 @@ class Banque {
         double temps_moyen_service;
         Caissier** caissiers;
         FileAttente* file_attente;
+        Simulation* simulation;
 
     public:
-        Banque(int nb_caissiers, double temps_moyen_service);
+        Banque(int nb_caissiers, double temps_moyen_service, Simulation* simulation);
         Caissier** mCaissiers();
         Caissier* unCaissierDisponible();
 };

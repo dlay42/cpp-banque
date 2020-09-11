@@ -1,6 +1,7 @@
 #include "../include/Banque.h"
+#include "../include/Simulation.h"
 
-Banque::Banque(int nb_caissiers, double temps_moyen_service) {
+Banque::Banque(int nb_caissiers, double temps_moyen_service, Simulation* simulation) {
     Poisson *generateur_aleatoire = new Poisson();
     generateur_aleatoire->init();
     
@@ -9,6 +10,7 @@ Banque::Banque(int nb_caissiers, double temps_moyen_service) {
     this->nb_clients_servis = 0;
     this->caissiers = new Caissier*[nb_caissiers];
     this->file_attente = new FileAttente(this);
+    this->simulation = simulation;
 
     for (int i = 0; i < nb_caissiers; i++) {
         this->caissiers[i] = new Caissier(generateur_aleatoire->next(temps_moyen_service), this);
