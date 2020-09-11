@@ -1,7 +1,9 @@
 #include "../include/Evenement.h"
+#include "../include/Simulation.h"
 
-Evenement::Evenement(double heure_evenement) {
+Evenement::Evenement(double heure_evenement, Simulation* simulation) {
     this->heure_evenement = heure_evenement;
+    this->simulation = simulation;
 }
 
 double Evenement::heureEvenement() {
@@ -9,5 +11,5 @@ double Evenement::heureEvenement() {
 }
 
 void Evenement::traiter() {
-
+    
 }
