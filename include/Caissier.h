@@ -18,7 +18,7 @@ class Caissier {
         double mTempsMoyenService();
 
         Caissier(double temps_moyen_service, Banque* banque);
-        void servir(Client client);
+        void servir(Client* client);
         void liberer();
 };
 

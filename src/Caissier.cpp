@@ -12,7 +12,8 @@ bool Caissier::estDisponible() {
     return disponible;
 }
 
-void Caissier::servir(Client client) {
+// TODO
+void Caissier::servir(Client* client) {
 
 }
 
