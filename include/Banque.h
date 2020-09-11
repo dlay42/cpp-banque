@@ -17,7 +17,11 @@ class Banque {
 
     public:
         Banque(int nb_caissiers, double temps_moyen_service, Simulation* simulation);
+        
+        // Getter
         Caissier** mCaissiers();
+        FileAttente* mFileAttente();
+
         Caissier* unCaissierDisponible();
 };
 

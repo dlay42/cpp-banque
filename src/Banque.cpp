@@ -17,6 +17,10 @@ Banque::Banque(int nb_caissiers, double temps_moyen_service, Simulation* simulat
     }
 }
 
+FileAttente* Banque::mFileAttente() {
+    return file_attente;
+}
+
 Caissier* Banque::unCaissierDisponible() {
     int i = 0;
     Caissier *caissier_courant;
