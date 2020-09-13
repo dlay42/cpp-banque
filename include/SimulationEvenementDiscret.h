@@ -15,14 +15,14 @@ class CompareEvenement {
 
 class SimulationEvenementDiscret {
     protected:
-        double heure_actuel;
+        double heure_actuelle;
         priority_queue< Evenement*, vector< Evenement* >, CompareEvenement > evt_queue;
 
     public:
-        SimulationEvenementDiscret(double heure_actuel);
+        SimulationEvenementDiscret(double heure_actuelle);
         
         // Getter
-        double heureActuel();
+        double heureActuelle();
         priority_queue< Evenement*, vector< Evenement* >, CompareEvenement > mEvtQueue();
 
         void ajouter(Evenement* evt);

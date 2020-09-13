@@ -1,12 +1,15 @@
 #include "../include/SimulationEvenementDiscret.h"
 
-SimulationEvenementDiscret::SimulationEvenementDiscret(double heure_actuel) {
-    this->heure_actuel = heure_actuel;
+#include <iostream>
+using namespace std;
+
+SimulationEvenementDiscret::SimulationEvenementDiscret(double heure_actuelle) {
+    this->heure_actuelle = heure_actuelle;
 }
 
 // TODO
-double SimulationEvenementDiscret::heureActuel() {
-    return heure_actuel;
+double SimulationEvenementDiscret::heureActuelle() {
+    return heure_actuelle;
 }
 
 priority_queue< Evenement*, vector< Evenement* >, CompareEvenement > SimulationEvenementDiscret::mEvtQueue() {
