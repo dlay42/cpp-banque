@@ -9,8 +9,12 @@ double SimulationEvenementDiscret::heureActuel() {
     return heure_actuel;
 }
 
-void SimulationEvenementDiscret::ajouter(Evenement* evt) {
+priority_queue< Evenement*, vector< Evenement* >, CompareEvenement > SimulationEvenementDiscret::mEvtQueue() {
+    return evt_queue;
+}
 
+void SimulationEvenementDiscret::ajouter(Evenement* evt) {
+    evt_queue.push(evt);
 }
 
 void SimulationEvenementDiscret::lancer() {
