@@ -13,7 +13,7 @@ class Evenement {
         // Getter
         double heureEvenement();
         
-        void traiter();
+        virtual void traiter();
 };
 
 #endif
