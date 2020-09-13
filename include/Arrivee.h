@@ -6,7 +6,7 @@
 
 class Arrivee:public Evenement {
     public:
-        Arrivee(double heure_evenement);
+        Arrivee(double heure_evenement, Simulation* simulation);
         void traiter();
 };
 
