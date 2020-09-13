@@ -6,7 +6,6 @@ Arrivee::Arrivee(double heure_evenement):Evenement(heure_evenement, simulation) 
     this->simulation = simulation;
 }
 
-// TODO
 void Arrivee::traiter() {
     Poisson* generateur_aleatoire = new Poisson();
     generateur_aleatoire->init();
