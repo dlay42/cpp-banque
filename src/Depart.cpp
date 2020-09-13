@@ -15,5 +15,4 @@ void Depart::traiter() {
     } else {
         caissier->estDisponible();
     }
-    client->~Client();
 }

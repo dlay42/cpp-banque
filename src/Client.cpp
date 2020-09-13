@@ -7,7 +7,3 @@ Client::Client(double heure_arrivee) {
 double Client::heureArrivee() {
     return heure_arrivee;
 }
-
-Client::~Client() {
-    delete this;
-}

@@ -9,8 +9,6 @@ class Client {
     public:
         Client(double heure_arrivee);
         double heureArrivee();
-
-        ~Client();
 };
 
 #endif
