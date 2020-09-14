@@ -25,7 +25,15 @@ Banque* Caissier::mBanque() {
 
 // TODO
 void Caissier::servir(Client* client) {
+    Poisson* generateur_aleatoire = new Poisson();
+    generateur_aleatoire->init();
 
+    this->nb_clients_servis++;
+    this->disponible = false;
+
+    double heure_depart = banque->mSimulation()->heureActuelle() + generateur_aleatoire->next(temps_moyen_service);    
+    cout << "Event <DEPARTURE>: Client has been served and leave at " << heure_depart << " !" << endl;
+    banque->mSimulation()->ajouter(new Depart(heure_depart, this, this->mBanque()->mSimulation()));
 }
 
 void Caissier::liberer() {
