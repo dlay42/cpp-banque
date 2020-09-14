@@ -11,7 +11,7 @@ class Evenement {
         Evenement(double heure_evenement, Simulation* simulation);
 
         // Getter
-        double heureEvenement();
+        virtual double heureEvenement();
         
         virtual void traiter();
 };
