@@ -17,9 +17,15 @@ priority_queue< Evenement*, vector< Evenement* >, CompareEvenement > SimulationE
 }
 
 void SimulationEvenementDiscret::ajouter(Evenement* evt) {
-    evt_queue.push(evt);
+    this->evt_queue.push(evt);
 }
 
 void SimulationEvenementDiscret::lancer() {
-
+    Evenement *evt_courant;
+    while (!evt_queue.empty()) {
+        evt_courant = this->evt_queue.top();
+        this->evt_queue.pop();
+        this->heure_actuelle = evt_courant->heureEvenement();
+        evt_courant->traiter();
+    }
 }
