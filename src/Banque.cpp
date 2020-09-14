@@ -29,8 +29,8 @@ Caissier* Banque::unCaissierDisponible() {
         caissier_courant = caissiers[i];
         i++;
     } while (!caissier_courant->estDisponible() && i < nb_caissiers);
-    
-    if (i <= nb_caissiers)
+
+    if (i < nb_caissiers)
         return caissier_courant;
     else
         return NULL;
