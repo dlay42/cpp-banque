@@ -1,10 +1,14 @@
 #include "../include/Depart.h"
 #include "../include/Simulation.h"
+#include "../include/Caissier.h"
 
-Depart::Depart(double heure_evenement, Caissier* caissier, Client* client):Evenement(heure_evenement, simulation) {
+#include <iostream>
+using namespace std;
+
+Depart::Depart(double heure_evenement, Caissier* caissier, Simulation* simulation):Evenement(heure_evenement, simulation) {
     this->heure_evenement = heure_evenement;
     this->caissier = caissier;
-    this->client = client;
+    this->simulation = simulation;
 }
 
 void Depart::traiter() {
