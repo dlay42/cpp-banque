@@ -13,6 +13,6 @@ void Depart::traiter() {
         Client *premier_client = file_clients->retirer();
         caissier->servir(premier_client);
     } else {
-        caissier->estDisponible();
+        caissier->liberer();
     }
 }
