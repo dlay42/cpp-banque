@@ -21,6 +21,8 @@ void Arrivee::traiter() {
         simulation->mBanque()->mFileAttente()->ajouter(nouveau_client);
 
     double prochaine_echeance = simulation->heureActuelle() + generateur_aleatoire->next(simulation->tempsMoyenArrivee());
-    if (prochaine_echeance <= simulation->dureePrevue())
+    if (prochaine_echeance <= simulation->dureePrevue()) {
+        cout << "Event <ARRIVAL>: Client just arrived at " << prochaine_echeance << " !" << endl;
         simulation->ajouter(new Arrivee(prochaine_echeance, this->simulation));
+    }
 }

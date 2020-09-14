@@ -21,6 +21,7 @@ class Banque {
         // Getter
         Caissier** mCaissiers();
         FileAttente* mFileAttente();
+        Simulation* mSimulation();
 
         Caissier* unCaissierDisponible();
 };

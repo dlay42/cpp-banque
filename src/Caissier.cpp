@@ -1,4 +1,11 @@
 #include "../include/Caissier.h"
+#include "../include/Banque.h"
+#include "../include/Simulation.h"
+#include "../include/SimulationEvenementDiscret.h"
+#include "../include/Poisson.h"
+
+#include <iostream>
+using namespace std;
 
 Caissier::Caissier(double temps_moyen_service, Banque* banque) {
     this->temps_moyen_service = temps_moyen_service;
@@ -10,6 +17,10 @@ Caissier::Caissier(double temps_moyen_service, Banque* banque) {
 
 bool Caissier::estDisponible() {
     return disponible;
+}
+
+Banque* Caissier::mBanque() {
+    return banque;
 }
 
 // TODO

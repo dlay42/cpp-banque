@@ -1,4 +1,8 @@
 #include "../include/FileAttente.h"
+#include "../include/Banque.h"
+
+#include <iostream>
+using namespace std;
 
 FileAttente::FileAttente(Banque* banque) {
     this->longueur_max = 0;
@@ -8,6 +12,7 @@ FileAttente::FileAttente(Banque* banque) {
 }
 
 void FileAttente::ajouter(Client* client) {
+    cout << "Aucun caissier disponible - le client rejoint la file à la " << this->file_clients.size() << "eme position ---" << endl;
     this->file_clients.push_back(client);
 }
 

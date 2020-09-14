@@ -2,6 +2,7 @@
 #define CAISSIER_H_
 
 #include "../include/Client.h"
+#include "../include/Depart.h"
 
 class Banque;
 class Caissier {
@@ -16,6 +17,7 @@ class Caissier {
         // Getters
         bool estDisponible();
         double mTempsMoyenService();
+        Banque* mBanque();
 
         Caissier(double temps_moyen_service, Banque* banque);
         void servir(Client* client);

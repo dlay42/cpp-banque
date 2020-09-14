@@ -1,5 +1,9 @@
 #include "../include/Banque.h"
 #include "../include/Simulation.h"
+#include "../include/FileAttente.h"
+
+#include <iostream>
+using namespace std;
 
 Banque::Banque(int nb_caissiers, double temps_moyen_service, Simulation* simulation) {
     Poisson *generateur_aleatoire = new Poisson();
@@ -19,6 +23,10 @@ Banque::Banque(int nb_caissiers, double temps_moyen_service, Simulation* simulat
 
 FileAttente* Banque::mFileAttente() {
     return file_attente;
+}
+
+Simulation* Banque::mSimulation() {
+    return simulation;
 }
 
 Caissier* Banque::unCaissierDisponible() {
