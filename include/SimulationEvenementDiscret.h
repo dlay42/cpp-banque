@@ -22,7 +22,7 @@ class SimulationEvenementDiscret {
         SimulationEvenementDiscret(double heure_actuelle);
         
         // Getter
-        double heureActuelle();
+        virtual double heureActuelle();
         priority_queue< Evenement*, vector< Evenement* >, CompareEvenement > mEvtQueue();
 
         void ajouter(Evenement* evt);

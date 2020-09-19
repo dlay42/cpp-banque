@@ -7,7 +7,6 @@ SimulationEvenementDiscret::SimulationEvenementDiscret(double heure_actuelle) {
     this->heure_actuelle = heure_actuelle;
 }
 
-// TODO
 double SimulationEvenementDiscret::heureActuelle() {
     return heure_actuelle;
 }

@@ -18,7 +18,7 @@ int main(int argc, char ** argv) {
     double arg_duree_prevue = 10;
     double arg_temps_moyen_arrivee = 0.5;
     int arg_nb_caissiers = 5;
-    double arg_temps_moyen_service = 10;
+    double arg_temps_moyen_service = 100;
 
     cout << "###################### Début de la simulation à " << "0" << " ######################" << endl;
     Simulation *simulation = new Simulation(arg_duree_prevue, arg_temps_moyen_arrivee, arg_nb_caissiers, arg_temps_moyen_service);
@@ -28,7 +28,7 @@ int main(int argc, char ** argv) {
     Banque *simulation_banque = simulation->mBanque();
     cout << "##################### STATISTIQUES GLOBALES ######################" << endl;
     cout    << left << setw(35) << "Durée réelle:"
-            << left << setw(10) << simulation->dureeReelle() << endl;
+            << left << setw(10) << simulation->heureActuelle() << endl;
     cout    << left << setw(33) << "Nombre de clients:"
             << left << setw(10) << simulation->mNbClients() << endl;
     cout    << left << setw(33) << "Longueur max. de la file:"
