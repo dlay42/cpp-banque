@@ -62,47 +62,74 @@ $(function() {
 <div class="title">Projet atelier C++ </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h2>Cahier des charges</h2>
-<h3>Enoncé</h3>
-<p><a href="https://depinfo.u-cergy.fr/~pl/docs/sujetBanque.pdf">https://depinfo.u-cergy.fr/~pl/docs/sujetBanque.pdf</a></p>
-<h3>Préambule</h3>
-<p><a class="el" href="classSimulation.html">Simulation</a> d'une agence bancaire :</p><ul>
-<li>N caissiers</li>
-<li>Clients qui arrivent de façon pseudo-aléatoire</li>
+<div class="textblock"><p>Mini-projet réalisé dans le cadre de l'atelier C++ de M2 IISC (réseaux et sécurité) durant la période du 07/09/2020 au 11/09/2020. Cet atelier a été proposé par M. Philippe LAROQUE, enseignant au département informatique à l'UFR des sciences et techniques de CY Cergy Paris Université (CYU) (lien du module : <a href="https://depinfo.u-cergy.fr/~pl/wiki/wakka.php?wiki=ModuleProgrammationCPP">https://depinfo.u-cergy.fr/~pl/wiki/wakka.php?wiki=ModuleProgrammationCPP</a>). Il a pour but de nous fournir les bases du language de programmation orienté objet C++ à travers un exercice mettant en oeuvre toutes les spécificités du language.</p>
+<h2>Enoncé</h2>
+<p>Construire une simulation statistique mettant en scène l'arrivée et le service de clients au sein d'une banque. <a href="https://depinfo.u-cergy.fr/~pl/docs/sujetBanque.pdf">https://depinfo.u-cergy.fr/~pl/docs/sujetBanque.pdf</a></p>
+<h2>Scénario</h2>
+<h3>Arrivée d'un client :</h3>
+<ul>
+<li>Un client arrive ;</li>
+<li>Si un caissier est disponible, il se dirige vers le caissier le plus proche ; sinon, il rejoins la file d'attente.</li>
 </ul>
-<p>=&gt; Quand un client arrive, Si un ou des caissiers se libère il se dirige vers un caissier Sinon il se place dans une queue :</p><ul>
-<li>Quand c'est son tour, il se dirige vers un caissier.</li>
+<h3>Départ d'un client :</h3>
+<ul>
+<li>Le client se fait servir par un caissier selon le temps de service du caissier ;</li>
+<li>Le client servi part de la banque ;</li>
+<li>Si la file d'attente n'est pas vide, le caissier prend en charge le premier de la file ; sinon, le caissier est disponible.</li>
 </ul>
-<h3>Algorithme</h3>
-<p>Paramètres d'entrée :</p><ul>
-<li>Durée prévue : temps à partir duquel on accepte plus de client (:warning: ce n'est pas la fin de la simulation) ;</li>
+<h2>Hypothèses</h2>
+<ul>
+<li>Les arrivées client et services suivent une <b>loi de <a class="el" href="classPoisson.html">Poisson</a></b> (fournie : <a href="https://depinfo.u-cergy.fr/~pl/docs/Poisson.h">https://depinfo.u-cergy.fr/~pl/docs/Poisson.h</a>) ;</li>
+<li>Le client est : <b>honnête</b> (il ne double pas), <b>patient</b> (il ne quitte pas la queue (i.e. file d'attente jamais pleine)), <b>paresseux</b> (il va à la caisse la plus proche de l'entrée (caissier[min])) ;</li>
+<li>Le caissier est : <b>parfait</b> (il prend en charge un autre client dès qu'il a fini si la queue n'est pas vide) ;</li>
+<li>La simulation est par <b>évènements discrets</b> (i.e. pas de notion de temps).</li>
+</ul>
+<h2>Procédure &ndash; Paramètres d'entrée et de sortie</h2>
+<h3>Paramètres d'entrée :</h3>
+<ul>
+<li>Durée prévue : temps à partir duquel on accepte plus de client (/!\ ce n'est pas la fin de la simulation) ;</li>
 <li>Nombre de caissiers ;</li>
-<li>Temps moyen de service (/caissiers) : permet de simuler la différence de performance entre les caissiers (facteur humain) ;</li>
+<li>Temps moyen de service (par caissiers) : permet de simuler la différence de performance entre les caissiers (facteur humain) ;</li>
 <li>Temps moyen entre deux arrivées successives de clients.</li>
 </ul>
-<p>Paramètre de sortie :</p><ul>
-<li>Durée réelle : temps de fin de la simulation ;</li>
+<h3>Paramètre de sortie :</h3>
+<ul>
+<li>Durée réelle : temps auquel la simulation s'achève ;</li>
 <li>Longueur max. et moyenne de la file ;</li>
 <li>Nombre de clients servis (au total et par caissiers) ;</li>
-<li>Temps moyen d'attente dans la file ;</li>
-<li>Taux d'occupation par caissiers : temps de service total/durée total simulation.</li>
+<li>Taux d'occupation par caissiers : temps de service total/durée réelle.</li>
 </ul>
-<p>Hypothèse :</p><ul>
-<li>Arrivées et services poissonniens</li>
-<li>Le client est :<ul>
-<li>Honnête : il ne double pas ;</li>
-<li>Patient : il ne quitte pas la queue (i.e. file d'attente jamais pleine) ;</li>
-<li>Paresseux : il va à la caisse la plus proche de l'entrée (caissier[min]).</li>
-</ul>
+<h2>Rendu</h2>
+<h3>Date</h3>
+<ul>
+<li>20/09/2020 <h3>Livrables</h3>
 </li>
-<li>Le caissier est :<ul>
-<li>Parfait : il prend un autre client dès qu'il a fini si la queue n'est pas vide.</li>
 </ul>
-</li>
-<li><a class="el" href="classSimulation.html">Simulation</a> par évènement discrets (pas par pas d'horloge).</li>
+<p>Archive contenant :</p><ul>
+<li>Les sources du projet ;</li>
+<li>La documentation générée par Doxygen ;</li>
+<li>un Makefile permettant compiler/build le projet.</li>
 </ul>
-<h3>Rendu</h3>
-<p>Doxygen </p>
+<h2>Programme</h2>
+<h3>Makefile</h3>
+<p>Compilation/build : </p><div class="fragment"><div class="line">make</div></div><!-- fragment --><p>Cleanup : </p><div class="fragment"><div class="line">make clean</div></div><!-- fragment --><p>Lancement du programme : </p><div class="fragment"><div class="line">bin/SimulationBanque -d &lt;DUREE_PREVUE&gt; -a &lt;TEMPS_MOY_ARRIVEE&gt; -s &lt;TEMPS_MOY_SERVICE&gt; -c &lt;NB_CAISSIERS&gt;</div></div><!-- fragment --><p> ou (<code>long</code> options) : </p><div class="fragment"><div class="line">bin/SimulationBanque --duree-prevue &lt;DUREE_PREVUE&gt; --temps-moy-arrivee &lt;TEMPS_MOY_ARRIVEE&gt; -temps-moy-service &lt;TEMPS_MOY_SERVICE&gt; --caissiers &lt;NB_CAISSIERS&gt;</div></div><!-- fragment --><p><b>Remarque :</b> Il n'y pas de tests unitaires pour les classes implémentées.</p>
+<h3>Doxygen</h3>
+<p>La documentation présente est normalement la dernière à jour. Vous pouvez néanmoins la regénérer (sous Linux) : </p><div class="fragment"><div class="line">doxygen DoxyFile</div></div><!-- fragment --><p>Elle est accessible au format <code>html</code> au chemin <code>docs/index.html</code>.</p>
+<p><b>Remarque :</b> Assurez-vous bien d'avoir les packages <code>doxygen</code> et <code>doxygen-doc</code> d'installés (ou équivalents selon la distribution).</p>
+<h3>Output</h3>
+<p>Le programme affiche :</p><ul>
+<li>Une journalisation du déroulé de la simulation recensant les actions du client (arrivée, départ, et positionnement dans la file d'attente) ;</li>
+<li>Les paramètres d'entrées de la simulation ;</li>
+<li>Les paramètres statisques de sortie de la simulation.</li>
+</ul>
+<div class="fragment"><div class="line">root@dlay-VirtualBox:/var/share/cpp/cpp-banque# bin/SimulationBanque -d 10 -a 0.5 -s 10 -c 5</div><div class="line">################### DEBUT DE LA SIMULATION A 0 ###################</div><div class="line">Event &lt;ARRIVAL&gt;: Client just arrived at 0 !</div><div class="line">Event &lt;DEPARTURE&gt;: Client has been served and leave at 103.544 !</div><div class="line">Event &lt;ARRIVAL&gt;: Client just arrived at 0.055666 !</div><div class="line">Event &lt;DEPARTURE&gt;: Client has been served and leave at 3.63814 !</div><div class="line">Event &lt;ARRIVAL&gt;: Client just arrived at 0.111332 !</div><div class="line">Event &lt;DEPARTURE&gt;: Client has been served and leave at 51.2395 !</div><div class="line">Event &lt;ARRIVAL&gt;: Client just arrived at 0.166998 !</div><div class="line">Event &lt;DEPARTURE&gt;: Client has been served and leave at 5.01793 !</div><div class="line">Event &lt;ARRIVAL&gt;: Client just arrived at 0.222664 !</div><div class="line">Event &lt;DEPARTURE&gt;: Client has been served and leave at 64.165 !</div><div class="line">Event &lt;ARRIVAL&gt;: Client just arrived at 0.27833 !</div><div class="line">Aucun caissier disponible - le client rejoint la file à la 1e position ---</div><div class="line">Event &lt;ARRIVAL&gt;: Client just arrived at 1.88724 !</div><div class="line">Aucun caissier disponible - le client rejoint la file à la 2e position ---</div><div class="line">Event &lt;ARRIVAL&gt;: Client just arrived at 3.49616 !</div><div class="line">Aucun caissier disponible - le client rejoint la file à la 3e position ---</div><div class="line">Event &lt;ARRIVAL&gt;: Client just arrived at 5.10507 !</div><div class="line">Event &lt;DEPARTURE&gt;: Client has been served and leave at 7.22061 !</div><div class="line">Event &lt;DEPARTURE&gt;: Client has been served and leave at 9.86886 !</div><div class="line">Aucun caissier disponible - le client rejoint la file à la 2e position ---</div><div class="line">Event &lt;ARRIVAL&gt;: Client just arrived at 6.71398 !</div><div class="line">Aucun caissier disponible - le client rejoint la file à la 3e position ---</div><div class="line">Event &lt;ARRIVAL&gt;: Client just arrived at 8.3229 !</div><div class="line">Event &lt;DEPARTURE&gt;: Client has been served and leave at 10.8031 !</div><div class="line">Aucun caissier disponible - le client rejoint la file à la 3e position ---</div><div class="line">Event &lt;ARRIVAL&gt;: Client just arrived at 9.93181 !</div><div class="line">Event &lt;DEPARTURE&gt;: Client has been served and leave at 14.7198 !</div><div class="line">Aucun caissier disponible - le client rejoint la file à la 3e position ---</div><div class="line">Event &lt;DEPARTURE&gt;: Client has been served and leave at 14.3856 !</div><div class="line">Event &lt;DEPARTURE&gt;: Client has been served and leave at 17.968 !</div><div class="line">Event &lt;DEPARTURE&gt;: Client has been served and leave at 19.5707 !</div><div class="line">###################### FIN DE LA SIMULATION ######################</div><div class="line">################## PARAMETRES DE LA SIMULATION ###################</div><div class="line">Durée prévue:                        10             </div><div class="line">Nombre de caissiers:                 5              </div><div class="line">Temps moyen d&#39;arrivée des clients    0.5            </div><div class="line">Temps de service moyen               10             </div><div class="line">##################### STATISTIQUES GLOBALES ######################</div><div class="line">Durée réelle:                        103.544        </div><div class="line">Nombre de clients servis au total:   12             </div><div class="line">Longueur max. de la file:            3              </div><div class="line">Longueur moyenne de la file:         0.288944       </div><div class="line">##################### STATISTIQUES CAISSIERS #####################</div><div class="line">Caissier #1 (tmpsServiceMoy 32.1783):</div><div class="line">    - Taux d&#39;occupation:                100 %          </div><div class="line">    - Nombre de clients servis:         1              </div><div class="line">Caissier #2 (tmpsServiceMoy 1.11332):</div><div class="line">    - Taux d&#39;occupation:                17.2993 %      </div><div class="line">    - Nombre de clients servis:         5              </div><div class="line">Caissier #3 (tmpsServiceMoy 15.889):</div><div class="line">    - Taux d&#39;occupation:                49.3781 %      </div><div class="line">    - Nombre de clients servis:         1              </div><div class="line">Caissier #4 (tmpsServiceMoy 1.50752):</div><div class="line">    - Taux d&#39;occupation:                18.7396 %      </div><div class="line">    - Nombre de clients servis:         4              </div><div class="line">Caissier #5 (tmpsServiceMoy 19.8713):</div><div class="line">    - Taux d&#39;occupation:                61.7537 %      </div><div class="line">    - Nombre de clients servis:         1              </div><div class="line">##################################################################</div></div><!-- fragment --><h3>Améliorations</h3>
+<ul>
+<li><b>Journalisation des événements (désordonnée)</b> &ndash; idée : re-empiler les évènements dans une seconde priority_queue et la parcourir à la fin de la simulation (sans traitement) et affichage de message selon le type d'événement (arrivée ou départ) ;</li>
+<li><b>Makefile</b> : j'ai un peu triché avec des règles génériques raccourcies/faciles (<code>mv &lt;OBJECTS/EXECUTABLE&gt; &lt;DIR&gt;</code>) ;</li>
+<li><b>Convention de nommage</b> : je me suis un peu embrouillé me montrant hésitant sur la convention de nommage à adopter notamment pour les méthodes (préfixée par un <code>m</code>) ;</li>
+<li><b>Documentation</b> : essentielle mais non-exhaustive contenant peut-être des fautes d'orthographe/de syntaxe (relecture verticale) + choix de la langue française pour le nommage des méthodes/variables et pour la documentation (certains passages en anglais) ;</li>
+<li><b>Options</b> : passage d'arguments au programme via <code>getopt</code> faite rapidement sans analyse des valeurs pouvant entraîner des bugs. </li>
+</ul>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

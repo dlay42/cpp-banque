@@ -196,7 +196,7 @@ int main(int argc, char** argv) {
     cout << "##################### STATISTIQUES GLOBALES ######################" << endl;
     cout    << left << setw(39) << "Durée réelle:"
             << left << setw(15) << simulation->heureActuelle() << endl;
-    cout    << left << setw(37) << "Nombre de clients:"
+    cout    << left << setw(37) << "Nombre de clients servis au total:"
             << left << setw(15) << simulation->mNbClients() << endl;
     cout    << left << setw(37) << "Longueur max. de la file:"
             << left << setw(15) << simulation_banque->mFileAttente()->mLongueurMax() << endl;
