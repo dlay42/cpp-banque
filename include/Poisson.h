@@ -26,7 +26,7 @@ public:
   // ou de forcer une meme serie aleatoire (param. seed)
   static void init(int seed = 0) {
     //srandom(seed ? seed : getpid()); 
-    srand(time(NULL));
+    srandom(time(NULL));
   }
   static double next(double moy = 1.0) {
     return -log(((double)random()/RAND_MAX))*moy;
