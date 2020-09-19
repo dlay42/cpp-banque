@@ -46,7 +46,6 @@ void Caissier::servir(Client* client) {
     // Add time contribution for busy stats. computation
     this->taux_occupation += heure_depart - banque->mSimulation()->heureActuelle();
 
-
     cout << "Event <DEPARTURE>: Client has been served and leave at " << heure_depart << " !" << endl;
     banque->mSimulation()->ajouter(new Depart(heure_depart, this, this->mBanque()->mSimulation()));
 }
