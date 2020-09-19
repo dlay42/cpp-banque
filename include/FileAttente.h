@@ -20,8 +20,10 @@ class FileAttente {
         // Getter
         int mLongueurMax();
         double mLongueurMoyenne();
+        int taille();
 
         void ajouter(Client* client);
+        void ajouterContributionLongueurMoyenne(double contribution);
         bool estVide();
         Client* retirer();
 };

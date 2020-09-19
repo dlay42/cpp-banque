@@ -6,6 +6,8 @@ Evenement::Evenement(double heure_evenement, Simulation* simulation) {
     this->simulation = simulation;
 }
 
+Evenement::Evenement() {}
+
 double Evenement::heureEvenement() {
     return heure_evenement;
 }

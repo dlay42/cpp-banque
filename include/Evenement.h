@@ -9,6 +9,7 @@ class Evenement {
 
     public:
         Evenement(double heure_evenement, Simulation* simulation);
+        Evenement();
 
         // Getter
         virtual double heureEvenement();

@@ -1,5 +1,6 @@
 #include "../include/FileAttente.h"
 #include "../include/Banque.h"
+#include "../include/Simulation.h"
 
 #include <iostream>
 using namespace std;
@@ -16,12 +17,25 @@ int FileAttente::mLongueurMax() {
 }
 
 double FileAttente::mLongueurMoyenne() {
-    return longueur_moyenne;
+    if (banque->mSimulation()->dureeReelle() != 0)
+        return longueur_moyenne / banque->mSimulation()->dureeReelle();
+    else
+        return 0;
+}
+
+int FileAttente::taille() {
+    return this->file_clients.size();
 }
 
 void FileAttente::ajouter(Client* client) {
     cout << "Aucun caissier disponible - le client rejoint la file à la " << this->file_clients.size() << "eme position ---" << endl;
+    if (file_clients.size() > longueur_max)
+        this->longueur_max = file_clients.size();
     this->file_clients.push_back(client);
+}
+
+void FileAttente::ajouterContributionLongueurMoyenne(double contribution) {
+    this->longueur_moyenne += contribution;
 }
 
 bool FileAttente::estVide() {

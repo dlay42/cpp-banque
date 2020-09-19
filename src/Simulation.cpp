@@ -19,6 +19,7 @@ double Simulation::dureePrevue() {
 }
 
 double Simulation::dureeReelle() {
+    this->duree_reelle = heure_actuelle;
     return duree_reelle;
 }
 
@@ -40,4 +41,20 @@ void Simulation::setHeureActuelle(double heure_actuelle) {
 
 void Simulation::incrementNbClients() {
     this->nb_clients++;
+}
+
+void Simulation::lancer() {
+    Evenement *evt_courant = new Evenement();
+    double heure_dernier_evt = 0;
+    while (!evt_queue.empty()) {
+        heure_dernier_evt = evt_courant->heureEvenement();
+        evt_courant = this->evt_queue.top();
+        this->evt_queue.pop();
+        this->heure_actuelle = evt_courant->heureEvenement();
+
+        // Add time contribution for file avg. time computation
+        banque->mFileAttente()->ajouterContributionLongueurMoyenne((heure_actuelle - heure_dernier_evt) * banque->mFileAttente()->taille());
+
+        evt_courant->traiter();
+    }
 }

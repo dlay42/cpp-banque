@@ -27,6 +27,7 @@ class Simulation:public SimulationEvenementDiscret {
         void setHeureActuelle(double heure_actuelle);
         
         void incrementNbClients();
+        void lancer();
 };
 
 #endif
