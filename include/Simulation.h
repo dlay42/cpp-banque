@@ -9,6 +9,7 @@ class Simulation:public SimulationEvenementDiscret {
     protected:
         double duree_prevue;
         double duree_reelle;
+        int nb_clients;
         double temps_moyen_arrivee;
         Banque *banque;
 
@@ -18,11 +19,14 @@ class Simulation:public SimulationEvenementDiscret {
         // Getter
         double dureePrevue();
         double dureeReelle();
+        int mNbClients();
         double tempsMoyenArrivee();
         Banque* mBanque();
 
         // Setter
         void setHeureActuelle(double heure_actuelle);
+        
+        void incrementNbClients();
 };
 
 #endif

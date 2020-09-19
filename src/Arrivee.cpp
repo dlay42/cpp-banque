@@ -23,6 +23,7 @@ void Arrivee::traiter() {
     double prochaine_echeance = simulation->heureActuelle() + generateur_aleatoire->next(simulation->tempsMoyenArrivee());
     if (prochaine_echeance <= simulation->dureePrevue()) {
         cout << "Event <ARRIVAL>: Client just arrived at " << prochaine_echeance << " !" << endl;
+        simulation->incrementNbClients();
         simulation->ajouter(new Arrivee(prochaine_echeance, this->simulation));
     }
 }

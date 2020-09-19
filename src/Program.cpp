@@ -31,7 +31,7 @@ int main(int argc, char ** argv) {
     cout    << left << setw(35) << "Durée réelle:"
             << left << setw(10) << simulation->dureeReelle() << endl;
     cout    << left << setw(33) << "Nombre de clients:"
-            << left << setw(10) << simulation->dureePrevue() << endl;
+            << left << setw(10) << simulation->mNbClients() << endl;
     cout    << left << setw(33) << "Longueur max. de la file:"
             << left << setw(10) << simulation_banque->mFileAttente()->mLongueurMax() << endl;
     cout    << left << setw(33) << "Longueur moyenne de la file:"
