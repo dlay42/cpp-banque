@@ -49,29 +49,8 @@ int main(int argc, char ** argv) {
                 << left << setw(10) << simulation_banque->mCaissiers()[i]->mNbClientsServis() << endl;
 
     }
-    
-    
-    
 
     cout << "##################################################################" << endl;
-    // Temps *t = new Temps(duree,nbCaissiers,temps,tempsArrivees);
-    // t->declencher();
-
-    // Banque * b = t->banque();
-
-    // // affichage des resultats
-    // FileAttente * f = b->fileAttente();
-    // cout << "duree Reelle : " << t->dureeReelle() << endl;
-    // cout << "nb clients   : " << b->nbClients() << endl;
-    // cout << "lg max file  : " << f->longueurMax() << endl;
-    // cout << "lg moy file  : " << f->longueurMoyenne() << endl;
-    // for (int i = 1; i <= nbCaissiers ; i++) {
-    // cout << "caissier " << i << " : ";
-    // Caissier * c = b->caissier(i);
-    // cout << c->tauxOccupation() << "%, "
-    //     << c->nbClients() << " clients\n";
-    // }
-
 
     return 0;
 }
