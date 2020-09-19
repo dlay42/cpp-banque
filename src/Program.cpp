@@ -42,7 +42,7 @@ int main(int argc, char ** argv) {
 
         string_stream.str(""); string_stream.clear();
         string_stream << i + 1;
-        cout    << "Caissier #" + string_stream.str() + ":" << endl;
+        cout    << "Caissier #" + string_stream.str() + " (tmpsServiceMoy " << simulation_banque->mCaissiers()[i]->mTempsMoyenService() << "):" << endl;
         cout    << left << setw(33) << "\t- Taux d'occupation:"
                 << left << setw(10) << simulation_banque->mCaissiers()[i]->mTauxOccupation() << endl;
         cout    << left << setw(33) << "\t- Nombre de clients servis:"
