@@ -1,34 +1,3 @@
-###################### DISCLAIMER #######################
-# Taken from https://spin.atomicobject.com/ and adapted #
-#########################################################
-
-# Global
-# CC := g++
-# TARGET ?= SimulationBanque
-
-# # Project files hierarchy
-# SRC_DIR ?= ./src
-# INSTALL_DIR ?= ./bin
-# BUILD_DIR ?= ./build
-
-# # Files
-# SRC_FILES := $(shell find $(SRC_DIR) -name *.cpp -or -name *.c -or -name *.s)
-# OBJECTS_FILES := $(addsuffix .o,$(basename $(SRC_FILES)))
-# DEP_FILES := $(OBJECTS_FILES:.o=.d)
-
-# INCLUDE_DIR := $(shell find $(SRC_DIR) -type d)
-# INC_FLAGS := $(addprefix -I,$(INCLUDE_DIR))
-
-# CPPFLAGS ?= $(INC_FLAGS) -MMD -MP
-
-# $(INSTALL_DIR)/$(TARGET): $(OBJECTS_FILES)
-# 	$(CC) $(CPPFLAGS) $(OBJECTS_FILES) -o $@
-
-# .PHONY: clean
-
-# clean:
-# 	$(RM) $(INSTALL_DIR)/$(TARGET) $(OBJECTS_FILES) $(DEP_FILES)
-
 CC := g++
 CFLAGS := #-Wall
 TARGET ?= SimulationBanque
@@ -41,25 +10,28 @@ INCLUDE_DIR ?= ./include
 LIB_DIR ?= ./lib
 
 # Files
-SOURCE_FILES := $(shell find $(SRC_DIR) -name '*.cpp')
-OBJECTS_FILES ?= $(SOURCE_FILES:.cpp=.o)
+SOURCE_FILES_1 := $(shell find $(SRC_DIR) -name '*.cpp' -exec basename {} \;)
+OBJECTS_FILES_1 ?= $(SOURCE_FILES_1:.cpp=.o)
+
+SOURCE_FILES ?= $(addprefix $(SRC_DIR)/, $(SOURCE_FILES_1))
+OBJECTS_FILES ?= $(addprefix $(SRC_DIR)/, $(OBJECTS_FILES_1))
 
 # Build
-all: $(TARGET)
+all: dir $(TARGET)
+
+dir:
+	@mkdir -p $(SRC_DIR)
+	@mkdir -p $(INSTALL_DIR)
+	@mkdir -p $(BUILD_DIR)
+	@mkdir -p $(INCLUDE_DIR)
+	@mkdir -p $(LIB_DIR)
 
 $(TARGET): $(OBJECTS_FILES)
-	@echo $(OBJECTS_FILES)
 	$(CC) -o $@ $^ $(CFLAGS)
-
-# main.o: hello.h
-
-# %.o: %.c
-# 	$(CC) -o $@ -c $< $(CFLAGS)
-
-# .PHONY: clean mrproper
+	@mv $(SRC_DIR)/*.o $(BUILD_DIR)
+	@mv $(TARGET) $(INSTALL_DIR)
 
 clean:
-	rm -rf $(SRC_DIR)/*.o
-
-# mrproper: clean
-# 	rm -rf $(TARGET)
+	rm -rf $(BUILD_DIR)/*.o
+	rm -rf $(INSTALL_DIR)/$(TARGET)
+	
