@@ -16,13 +16,12 @@ int main(int argc, char ** argv) {
     stringstream string_stream;
 
     double arg_duree_prevue = 10;
-    double arg_duree_reelle = 20;
     double arg_temps_moyen_arrivee = 0.5;
     int arg_nb_caissiers = 5;
     double arg_temps_moyen_service = 10;
 
     cout << "###################### Début de la simulation à " << "0" << " ######################" << endl;
-    Simulation *simulation = new Simulation(arg_duree_prevue, arg_duree_reelle, arg_temps_moyen_arrivee, arg_nb_caissiers, arg_temps_moyen_service);
+    Simulation *simulation = new Simulation(arg_duree_prevue, arg_temps_moyen_arrivee, arg_nb_caissiers, arg_temps_moyen_service);
     simulation->lancer();
     cout << "###################### Fin de la simulation ######################" << endl;
 

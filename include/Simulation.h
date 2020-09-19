@@ -14,7 +14,7 @@ class Simulation:public SimulationEvenementDiscret {
         Banque *banque;
 
     public:
-        Simulation(double duree_prevue, double duree_reelle, double temps_moyen_arrivee, int nb_caissiers, double temps_moyen_service);
+        Simulation(double duree_prevue, double temps_moyen_arrivee, int nb_caissiers, double temps_moyen_service);
 
         // Getter
         double dureePrevue();

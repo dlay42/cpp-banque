@@ -4,9 +4,9 @@
 #include <iostream>
 using namespace std;
 
-Simulation::Simulation(double duree_prevue, double duree_reelle, double temps_moyen_arrivee, int nb_caissiers, double temps_moyen_service):SimulationEvenementDiscret(heure_actuelle) {
+Simulation::Simulation(double duree_prevue, double temps_moyen_arrivee, int nb_caissiers, double temps_moyen_service):SimulationEvenementDiscret(heure_actuelle) {
     this->duree_prevue = duree_prevue;
-    this->duree_reelle = duree_reelle;
+    this->duree_reelle = 0;
     this->nb_clients = 1;
     this->temps_moyen_arrivee = temps_moyen_arrivee;
     this->banque = new Banque(nb_caissiers, temps_moyen_service, this);
