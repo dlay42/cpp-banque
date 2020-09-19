@@ -83,7 +83,7 @@ Le programme affiche :
 * Les paramètres d'entrées de la simulation ;
 * Les paramètres statisques de sortie de la simulation.
 
-```
+```console
 root@dlay-VirtualBox:/var/share/cpp/cpp-banque# bin/SimulationBanque -d 10 -a 0.5 -s 10 -c 5
 ################### DEBUT DE LA SIMULATION A 0 ###################
 Event <ARRIVAL>: Client just arrived at 0 !
