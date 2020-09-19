@@ -40,10 +40,10 @@ int main(int argc, char ** argv) {
     for (int i = 0; i < arg_nb_caissiers; i++) {
 
         string_stream.str(""); string_stream.clear();
-        string_stream << i + 1;
-        cout    << "Caissier #" + string_stream.str() + " (tmpsServiceMoy " << simulation_banque->mCaissiers()[i]->mTempsMoyenService() << "):" << endl;
+        string_stream << simulation_banque->mCaissiers()[i]->mTauxOccupation();
+        cout    << "Caissier #" << i + 1 << " (tmpsServiceMoy " << simulation_banque->mCaissiers()[i]->mTempsMoyenService() << "):" << endl;
         cout    << left << setw(33) << "\t- Taux d'occupation:"
-                << left << setw(10) << simulation_banque->mCaissiers()[i]->mTauxOccupation() << endl;
+                << left << setw(10) << string_stream.str() + " %" << endl;
         cout    << left << setw(33) << "\t- Nombre de clients servis:"
                 << left << setw(10) << simulation_banque->mCaissiers()[i]->mNbClientsServis() << endl;
 

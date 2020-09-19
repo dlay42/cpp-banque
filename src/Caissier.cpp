@@ -20,7 +20,10 @@ bool Caissier::estDisponible() {
 }
 
 double Caissier::mTauxOccupation() {
-    return taux_occupation;
+    if (banque->mSimulation()->dureeReelle() != 0)
+        return (taux_occupation / banque->mSimulation()->dureeReelle()) * 100;
+    else
+        return 0;
 }
 
 int Caissier::mNbClientsServis() {
@@ -39,6 +42,11 @@ void Caissier::servir(Client* client) {
     this->disponible = false;
 
     double heure_depart = banque->mSimulation()->heureActuelle() + generateur_aleatoire->next(temps_moyen_service);    
+    
+    // Add time contribution for busy stats. computation
+    this->taux_occupation += heure_depart - banque->mSimulation()->heureActuelle();
+
+
     cout << "Event <DEPARTURE>: Client has been served and leave at " << heure_depart << " !" << endl;
     banque->mSimulation()->ajouter(new Depart(heure_depart, this, this->mBanque()->mSimulation()));
 }

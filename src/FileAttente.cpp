@@ -28,10 +28,10 @@ int FileAttente::taille() {
 }
 
 void FileAttente::ajouter(Client* client) {
-    cout << "Aucun caissier disponible - le client rejoint la file à la " << this->file_clients.size() << "eme position ---" << endl;
+    cout << "Aucun caissier disponible - le client rejoint la file à la " << this->file_clients.size() + 1 << "e position ---" << endl;
+    this->file_clients.push_back(client);
     if (file_clients.size() > longueur_max)
         this->longueur_max = file_clients.size();
-    this->file_clients.push_back(client);
 }
 
 void FileAttente::ajouterContributionLongueurMoyenne(double contribution) {
