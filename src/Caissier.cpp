@@ -1,3 +1,11 @@
+/// @file Caissier.cpp
+/// @author Donald LAY (nomail@private.com)
+/// @brief Implémente la classe Caissier
+/// @see Caissier
+/// @version 0.1
+/// @date 2020-09-19
+/// @copyright Copyright (c) 2020
+
 #include "../include/Caissier.h"
 #include "../include/Banque.h"
 #include "../include/Simulation.h"
@@ -19,6 +27,10 @@ bool Caissier::estDisponible() {
     return disponible;
 }
 
+double Caissier::mTempsMoyenService() {
+    return temps_moyen_service;
+}
+
 double Caissier::mTauxOccupation() {
     if (banque->mSimulation()->dureeReelle() != 0)
         return (taux_occupation / banque->mSimulation()->dureeReelle()) * 100;
@@ -34,6 +46,10 @@ Banque* Caissier::mBanque() {
     return banque;
 }
 
+/// Cette méthode est utilisée par les événement Arrivee et Depart et réalise les actions suivantes :\n
+/// * calcul de la date de départ du Client (aléatoire en fonction du temps de service du Caissier) ;\n
+/// * mise à jour du taux d'occupation du Caissier ;\n
+/// * création et ajout d'un Depart de Client dans la file d'événement.
 void Caissier::servir(Client* client) {
     Poisson* generateur_aleatoire = new Poisson();
     generateur_aleatoire->init();
@@ -52,8 +68,4 @@ void Caissier::servir(Client* client) {
 
 void Caissier::liberer() {
     this->disponible = true;
-}
-
-double Caissier::mTempsMoyenService() {
-    return temps_moyen_service;
 }

@@ -1,3 +1,11 @@
+/// @file Banque.h
+/// @author Donald LAY (nomail@private.com)
+/// @brief Classe Banque
+/// @see Banque
+/// @version 0.1
+/// @date 2020-09-19
+/// @copyright Copyright (c) 2020
+
 #ifndef BANQUE_H_
 #define BANQUE_H_
 
@@ -23,6 +31,8 @@ class Banque {
         FileAttente* mFileAttente();
         Simulation* mSimulation();
 
+        /// @brief Vérifie si un Caissier de la banque est disponible
+        /// @return Caissier disponible, NULL sinon.
         Caissier* unCaissierDisponible();
 };
 

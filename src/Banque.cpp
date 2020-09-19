@@ -1,3 +1,11 @@
+/// @file Banque.cpp
+/// @author Donald LAY (nomail@private.com)
+/// @brief Implémente la classe Banque
+/// @see Banque
+/// @version 0.1
+/// @date 2020-09-19
+/// @copyright Copyright (c) 2020
+
 #include "../include/Banque.h"
 #include "../include/Simulation.h"
 #include "../include/FileAttente.h"
@@ -21,6 +29,10 @@ Banque::Banque(int nb_caissiers, double temps_moyen_service, Simulation* simulat
     }
 }
 
+Caissier** Banque::mCaissiers() {
+    return caissiers;
+}
+
 FileAttente* Banque::mFileAttente() {
     return file_attente;
 }
@@ -29,6 +41,9 @@ Simulation* Banque::mSimulation() {
     return simulation;
 }
 
+/// Parcours de la liste des Caissier de la banque (caissiers) :\n
+/// * tant qu'un Caissier n'est pas disponible, continuer le parcours ;\n
+/// * retourner le premier Caissier disponible (lazy cashier behaviour) -- sinon, NULL.
 Caissier* Banque::unCaissierDisponible() {
     int i = 0;
     Caissier *caissier_courant;
@@ -42,8 +57,4 @@ Caissier* Banque::unCaissierDisponible() {
         return caissier_courant;
     else
         return NULL;
-}
-
-Caissier** Banque::mCaissiers() {
-    return caissiers;
 }

@@ -1,3 +1,13 @@
+
+/// @file Program.cpp
+/// @author Donald LAY (nomail@private.com)
+/// @brief Simulation de queueing de clients dans une banque -- main() -- 
+/// effectué dans le cadre de l'atelier C++ en M2 IISC (réseaux et sécurité).
+/// @version 0.1
+/// @date 2020-09-19
+/// @copyright Copyright (c) 2020
+
+
 #include "../include/Client.h"
 #include "../include/Caissier.h"
 #include "../include/Banque.h"
@@ -15,6 +25,18 @@
 #include <sstream>
 #include <string>
 using namespace std;
+
+
+/// \fn int main(int argc, char** argv)
+/// \brief Fonction main() du programme.
+/// Tous les paramètres sont obligatoires 
+/// (choix du développeur).
+/// \param -d (--duree-prevue) double : durée prévue de la simulation.
+/// \param -a (--temps-moy-arrivee) double : temps moyen d'arrivée des clients.
+/// \param -s (--temps-moy-service) double : temps de service moyen des caissiers.
+/// \param -c (--caissiers) int : nombre de caissiers.
+/// \return 0 OK exit code -- le programme s'est bien déroulé.
+/// \return 2 CRITICAL exit code -- se référer au message d'erreur.
 
 int main(int argc, char** argv) {
 
@@ -192,7 +214,6 @@ int main(int argc, char** argv) {
         cout    << left << setw(37) << "\t- Nombre de clients servis:"
                 << left << setw(15) << simulation_banque->mCaissiers()[i]->mNbClientsServis() << endl;
     }
-
     cout << "##################################################################" << endl;
 
     return 0;

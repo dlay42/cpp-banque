@@ -1,3 +1,11 @@
+/// @file SimulationEvenementDiscret.cpp
+/// @author Donald LAY (nomail@private.com)
+/// @brief Implémente la classe SimulationEvenementDiscret, Simulation base class
+/// @see SimulationEvenementDiscret
+/// @version 0.1
+/// @date 2020-09-19
+/// @copyright Copyright (c) 2020
+
 #include "../include/SimulationEvenementDiscret.h"
 
 #include <iostream>
@@ -19,4 +27,5 @@ void SimulationEvenementDiscret::ajouter(Evenement* evt) {
     this->evt_queue.push(evt);
 }
 
+/// Méthode vide.
 void SimulationEvenementDiscret::lancer() {}

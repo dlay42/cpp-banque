@@ -1,3 +1,11 @@
+/// @file Arrivee.cpp
+/// @author Donald LAY (nomail@private.com)
+/// @brief Implémente la classe Arrivee, Evenement derived class
+/// @see Arrivee
+/// @version 0.1
+/// @date 2020-09-19
+/// @copyright Copyright (c) 2020
+
 #include "../include/Arrivee.h"
 #include "../include/Simulation.h"
 
@@ -9,6 +17,11 @@ Arrivee::Arrivee(double heure_evenement, Simulation* simulation):Evenement(heure
     this->simulation = simulation;
 }
 
+/// Cette méthode réalise les actions suivantes :\n
+/// * calcul de la prochaine échéance (aléatoire en fonction du temps d'arrivée moyen des clients) et si la prochaine échéance ne dépasse pas la durée prévue :\n
+///     - création d'un nouveau client (= arrivée d'un client) ;\n
+///     - ajout du client dans la file d'attente selon la disponibilité des caissiers ;\n
+///     - création de l'événement et ajout dans la file des événements.
 void Arrivee::traiter() {
     Poisson* generateur_aleatoire = new Poisson();
     generateur_aleatoire->init();

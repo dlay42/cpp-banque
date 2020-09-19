@@ -1,0 +1,33 @@
+digraph "include/Caissier.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node4 [label="include/Caissier.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="include/Banque.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Banque_8h.html",tooltip="Classe Banque. "];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="include/Simulation.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Simulation_8h.html",tooltip="Classe Simulation, SimulationEvenementDiscret derived class. "];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="src/Arrivee.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Arrivee_8cpp.html",tooltip="Implémente la classe Arrivee, Evenement derived class. "];
+  Node6 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="src/Banque.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Banque_8cpp.html",tooltip="Implémente la classe Banque. "];
+  Node6 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="src/Caissier.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Caissier_8cpp.html",tooltip="Implémente la classe Caissier. "];
+  Node6 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="src/Depart.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Depart_8cpp.html",tooltip="Implémente la classe Depart, Evenement derived class. "];
+  Node6 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="src/Evenement.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Evenement_8cpp.html",tooltip="Implémente la classe Evenement, Arrivee & Depart base class. "];
+  Node6 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="src/FileAttente.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$FileAttente_8cpp.html",tooltip="Implémente la classe FileAttente. "];
+  Node6 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="src/Program.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Program_8cpp.html",tooltip="Simulation de queueing de clients dans une banque – main() – effectué dans le cadre de l&#39;atelier C+..."];
+  Node6 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="src/Simulation.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$Simulation_8cpp.html",tooltip="Implémente la classe Simulation, SimulationEvenementDiscret derived class. "];
+  Node5 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

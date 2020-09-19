@@ -1,3 +1,11 @@
+/// @file Depart.h
+/// @author Donald LAY (nomail@private.com)
+/// @brief Classe Depart, Evenement derived class
+/// @see Depart
+/// @version 0.1
+/// @date 2020-09-19
+/// @copyright Copyright (c) 2020
+
 #ifndef DEPART_H_
 #define DEPART_H_
 
@@ -12,6 +20,10 @@ class Depart:public Evenement {
 
     public:
         Depart(double heure_evenement, Caissier* caissier, Simulation* simulation);
+        
+        /// @brief Implémente le traitement
+        /// pour un événement de type 'Depart'.
+        /// @see Caissier::servir(Client* client)
         void traiter();
 };
 

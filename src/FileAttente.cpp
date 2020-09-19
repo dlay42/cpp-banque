@@ -1,3 +1,11 @@
+/// @file FileAttente.cpp
+/// @author Donald LAY (nomail@private.com)
+/// @brief Implémente la classe FileAttente
+/// @see FileAttente
+/// @version 0.1
+/// @date 2020-09-19
+/// @copyright Copyright (c) 2020
+
 #include "../include/FileAttente.h"
 #include "../include/Banque.h"
 #include "../include/Simulation.h"

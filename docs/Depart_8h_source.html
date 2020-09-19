@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CPP - Banque:  Fichier source de include/Depart.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">CPP - Banque
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">Depart.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Depart_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef DEPART_H_</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define DEPART_H_</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;../include/Client.h&quot;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;../include/Evenement.h&quot;</span></div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">class </span><a class="code" href="classCaissier.html">Caissier</a>;</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="classDepart.html">   16</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDepart.html">Depart</a>:<span class="keyword">public</span> <a class="code" href="classEvenement.html">Evenement</a> {</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">protected</span>:</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="classCaissier.html">Caissier</a>* caissier;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="classClient.html">Client</a>* client;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">public</span>:</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="classDepart.html">Depart</a>(<span class="keywordtype">double</span> heure_evenement, <a class="code" href="classCaissier.html">Caissier</a>* caissier, <a class="code" href="classSimulation.html">Simulation</a>* simulation);</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        </div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classDepart.html#a2f791f13cc90635dffa097bfe00cd830">traiter</a>();</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;};</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="classSimulation_html"><div class="ttname"><a href="classSimulation.html">Simulation</a></div><div class="ttdef"><b>Definition:</b> Simulation.h:16</div></div>
+<div class="ttc" id="classDepart_html"><div class="ttname"><a href="classDepart.html">Depart</a></div><div class="ttdef"><b>Definition:</b> Depart.h:16</div></div>
+<div class="ttc" id="classEvenement_html"><div class="ttname"><a href="classEvenement.html">Evenement</a></div><div class="ttdef"><b>Definition:</b> Evenement.h:13</div></div>
+<div class="ttc" id="classDepart_html_a2f791f13cc90635dffa097bfe00cd830"><div class="ttname"><a href="classDepart.html#a2f791f13cc90635dffa097bfe00cd830">Depart::traiter</a></div><div class="ttdeci">void traiter()</div><div class="ttdoc">Implémente le traitement pour un événement de type &amp;#39;Depart&amp;#39;. </div><div class="ttdef"><b>Definition:</b> Depart.cpp:30</div></div>
+<div class="ttc" id="classClient_html"><div class="ttname"><a href="classClient.html">Client</a></div><div class="ttdef"><b>Definition:</b> Client.h:12</div></div>
+<div class="ttc" id="classCaissier_html"><div class="ttname"><a href="classCaissier.html">Caissier</a></div><div class="ttdef"><b>Definition:</b> Caissier.h:16</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>

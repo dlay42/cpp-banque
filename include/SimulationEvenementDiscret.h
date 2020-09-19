@@ -1,3 +1,11 @@
+/// @file SimulationEvenementDiscret.h
+/// @author Donald LAY (nomail@private.com)
+/// @brief Classe SimulationEvenementDiscret, Simulation base class et implémente la classe CompareEvenement
+/// @see SimulationEvenementDiscret
+/// @version 0.1
+/// @date 2020-09-19
+/// @copyright Copyright (c) 2020
+
 #ifndef SIMULATIONEVENEMENTDISCRET_H_
 #define SIMULATIONEVENEMENTDISCRET_H_
 
@@ -25,8 +33,13 @@ class SimulationEvenementDiscret {
         virtual double heureActuelle();
         priority_queue< Evenement*, vector< Evenement* >, CompareEvenement > mEvtQueue();
 
+        /// @brief Ajoute un Evenement à la priority_queue 
+        /// @param evt Evenement* : Evenement à ajouter à la priority_queue.
         void ajouter(Evenement* evt);
-        void lancer();
+
+        /// @brief Liaison dynamique pour le lancement de la Simulation
+        /// @see Simulation::lancer()
+        virtual void lancer();
 };
 
 #endif

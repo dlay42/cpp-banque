@@ -1,0 +1,114 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>CPP - Banque: Projet atelier C++</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">CPP - Banque
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Recherche');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Projet atelier C++ </div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><h2>Cahier des charges</h2>
+<h3>Enoncé</h3>
+<p><a href="https://depinfo.u-cergy.fr/~pl/docs/sujetBanque.pdf">https://depinfo.u-cergy.fr/~pl/docs/sujetBanque.pdf</a></p>
+<h3>Préambule</h3>
+<p><a class="el" href="classSimulation.html">Simulation</a> d'une agence bancaire :</p><ul>
+<li>N caissiers</li>
+<li>Clients qui arrivent de façon pseudo-aléatoire</li>
+</ul>
+<p>=&gt; Quand un client arrive, Si un ou des caissiers se libère il se dirige vers un caissier Sinon il se place dans une queue :</p><ul>
+<li>Quand c'est son tour, il se dirige vers un caissier.</li>
+</ul>
+<h3>Algorithme</h3>
+<p>Paramètres d'entrée :</p><ul>
+<li>Durée prévue : temps à partir duquel on accepte plus de client (:warning: ce n'est pas la fin de la simulation) ;</li>
+<li>Nombre de caissiers ;</li>
+<li>Temps moyen de service (/caissiers) : permet de simuler la différence de performance entre les caissiers (facteur humain) ;</li>
+<li>Temps moyen entre deux arrivées successives de clients.</li>
+</ul>
+<p>Paramètre de sortie :</p><ul>
+<li>Durée réelle : temps de fin de la simulation ;</li>
+<li>Longueur max. et moyenne de la file ;</li>
+<li>Nombre de clients servis (au total et par caissiers) ;</li>
+<li>Temps moyen d'attente dans la file ;</li>
+<li>Taux d'occupation par caissiers : temps de service total/durée total simulation.</li>
+</ul>
+<p>Hypothèse :</p><ul>
+<li>Arrivées et services poissonniens</li>
+<li>Le client est :<ul>
+<li>Honnête : il ne double pas ;</li>
+<li>Patient : il ne quitte pas la queue (i.e. file d'attente jamais pleine) ;</li>
+<li>Paresseux : il va à la caisse la plus proche de l'entrée (caissier[min]).</li>
+</ul>
+</li>
+<li>Le caissier est :<ul>
+<li>Parfait : il prend un autre client dès qu'il a fini si la queue n'est pas vide.</li>
+</ul>
+</li>
+<li><a class="el" href="classSimulation.html">Simulation</a> par évènement discrets (pas par pas d'horloge).</li>
+</ul>
+<h3>Rendu</h3>
+<p>Doxygen </p>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.13
+</small></address>
+</body>
+</html>
