@@ -19,11 +19,18 @@ bool Caissier::estDisponible() {
     return disponible;
 }
 
+double Caissier::mTauxOccupation() {
+    return taux_occupation;
+}
+
+int Caissier::mNbClientsServis() {
+    return nb_clients_servis;
+}
+
 Banque* Caissier::mBanque() {
     return banque;
 }
 
-// TODO
 void Caissier::servir(Client* client) {
     Poisson* generateur_aleatoire = new Poisson();
     generateur_aleatoire->init();

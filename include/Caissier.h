@@ -17,6 +17,8 @@ class Caissier {
         // Getters
         bool estDisponible();
         double mTempsMoyenService();
+        double mTauxOccupation();
+        int mNbClientsServis();
         Banque* mBanque();
 
         Caissier(double temps_moyen_service, Banque* banque);

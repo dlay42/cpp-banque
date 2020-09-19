@@ -11,6 +11,14 @@ FileAttente::FileAttente(Banque* banque) {
     this->banque = banque;
 }
 
+int FileAttente::mLongueurMax() {
+    return longueur_max;
+}
+
+double FileAttente::mLongueurMoyenne() {
+    return longueur_moyenne;
+}
+
 void FileAttente::ajouter(Client* client) {
     cout << "Aucun caissier disponible - le client rejoint la file à la " << this->file_clients.size() << "eme position ---" << endl;
     this->file_clients.push_back(client);

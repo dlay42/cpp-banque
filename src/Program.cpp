@@ -5,18 +5,55 @@
 #include "../include/Arrivee.h"
 #include "../include/Depart.h"
 
+#include <queue>
 #include <iostream>
+#include <iomanip>
+#include <sstream>
 using namespace std;
 
-int main() {
+int main(int argc, char ** argv) {
 
-    Simulation *simulation = new Simulation(10, 20, 0.5, 5, 10);
-    Banque *banque_simulation = simulation->mBanque();
+    stringstream string_stream;
 
-    for (int i = 0; i < 5; i++) {
-        cout << banque_simulation->mCaissiers()[i]->mTempsMoyenService() << endl;
+    double arg_duree_prevue = 10;
+    double arg_duree_reelle = 20;
+    double arg_temps_moyen_arrivee = 0.5;
+    int arg_nb_caissiers = 5;
+    double arg_temps_moyen_service = 10;
+
+    cout << "###################### Début de la simulation à " << "0" << " ######################" << endl;
+    Simulation *simulation = new Simulation(arg_duree_prevue, arg_duree_reelle, arg_temps_moyen_arrivee, arg_nb_caissiers, arg_temps_moyen_service);
+    simulation->lancer();
+    cout << "###################### Fin de la simulation ######################" << endl;
+
+    Banque *simulation_banque = simulation->mBanque();
+    cout << "##################### STATISTIQUES GLOBALES ######################" << endl;
+    cout    << left << setw(35) << "Durée réelle:"
+            << left << setw(10) << simulation->dureeReelle() << endl;
+    cout    << left << setw(33) << "Nombre de clients:"
+            << left << setw(10) << simulation->dureePrevue() << endl;
+    cout    << left << setw(33) << "Longueur max. de la file:"
+            << left << setw(10) << simulation_banque->mFileAttente()->mLongueurMax() << endl;
+    cout    << left << setw(33) << "Longueur moyenne de la file:"
+            << left << setw(10) << simulation_banque->mFileAttente()->mLongueurMoyenne() << endl;
+
+    cout << "##################### STATISTIQUES CAISSIERS #####################" << endl;
+    for (int i = 0; i < arg_nb_caissiers; i++) {
+
+        string_stream.str(""); string_stream.clear();
+        string_stream << i + 1;
+        cout    << "Caissier #" + string_stream.str() + ":" << endl;
+        cout    << left << setw(33) << "\t- Taux d'occupation:"
+                << left << setw(10) << simulation_banque->mCaissiers()[i]->mTauxOccupation() << endl;
+        cout    << left << setw(33) << "\t- Nombre de clients servis:"
+                << left << setw(10) << simulation_banque->mCaissiers()[i]->mNbClientsServis() << endl;
+
     }
+    
+    
+    
 
+    cout << "##################################################################" << endl;
     // Temps *t = new Temps(duree,nbCaissiers,temps,tempsArrivees);
     // t->declencher();
 

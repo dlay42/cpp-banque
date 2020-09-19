@@ -9,13 +9,18 @@ class Banque;
 class FileAttente {
     protected:
         int longueur_max;
-        int longueur_moyenne;
+        double longueur_moyenne;
         double attente_moyenne;
         Banque* banque;
         deque< Client* > file_clients;
 
     public:
         FileAttente(Banque* banque);
+
+        // Getter
+        int mLongueurMax();
+        double mLongueurMoyenne();
+
         void ajouter(Client* client);
         bool estVide();
         Client* retirer();
